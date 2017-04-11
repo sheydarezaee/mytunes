@@ -5,10 +5,8 @@ var AppModel = Backbone.Model.extend({
     this.set('currentSong', new SongModel());
     this.set('songQueue', new SongQueue());
 
-    console.log(this);
-
     this.attributes.library.on('enqueue',function(e){
-      console.log(e);
+      this.attributes.songQueue.add(e);
     },this);
 
 
@@ -24,14 +22,4 @@ var AppModel = Backbone.Model.extend({
       this.set('currentSong', song);
     }, this);
   },
-
-  events: {
-    'enqueue': 'addToQueue'
-  },
-
-  addToQueue: function() {
-    console.log(this);
-    this.trigger('add');
-  }
-
 });
