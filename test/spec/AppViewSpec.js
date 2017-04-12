@@ -22,6 +22,12 @@ describe('AppView', function() {
   it('should generate a PlayerView when created', function() {
     expect(appView.playerView).to.be.an.instanceof(PlayerView);
   });
+  it('should generate a LibraryView when created', function() {
+    expect(appView.libraryView).to.be.an.instanceof(LibraryView);
+  });
+  it('should generate a SongQueueView when created', function() {
+    expect(appView.songQueueView).to.be.an.instanceof(SongQueueView);
+  });
 
   describe('when the currently playing song changes', function() {
     it('updates current song in playerView', function() {
